@@ -1,0 +1,114 @@
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffff; /* Forest Green */
+  transition: all 0.3s ease;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-shanti);
+  color: black;
+  padding-left: 3rem;
+  position: relative; /* Added position */
+  z-index: 2; /* Added z-index */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes navbar-right items to the right */
+}
+
+.navbar-link {
+  margin-right: 20px;
+  font-size: 16px;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjusted to center the dropdown */
+  width: max-content; /* Adjust width based on content */
+  background-color: #f9f9f9;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.navbar-link:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* New styles for the cart count */
+.cart-container {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px; /* Adjust as needed */
+  right: -8px; /* Adjust as needed */
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px; /* Adjust as needed */
+}
+
+@media screen and (max-width: 660px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-left {
+    flex: 1; /* Take up all available space */
+    justify-content: flex-start; /* Align items to the start */
+    margin-bottom: 10px;
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .navbar-right {
+    flex: 1; /* Take up all available space */
+    justify-content: flex-end; /* Align items to the end */
+    margin-left: 10; /* Reset margin */
+    margin-bottom: 10px;
+  }
+
+  .iconic {
+    margin-left: 15px;
+  }
+
+  .navbar-link {
+    margin-right: 10px; /* Reset margin */
+    margin-bottom: 10px;
+  }
+}

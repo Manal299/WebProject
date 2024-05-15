@@ -1,0 +1,126 @@
+/* Your existing CSS */
+
+@font-face {
+  font-family: 'Garamond';
+  src: url('/Users/Projectwebka/WebProject/Frontend/src/font/CormorantGaramond-Bold.woff') format('woff');
+  font-weight: normal; 
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Heebo';
+  src: url('/Users/Projectwebka/WebProject/Frontend/src/font/Heebo-Light.woff') format('woff'); /* Update the path to your font file */
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+.infimg {
+  width: 100%;
+}
+
+.inftxt1 {
+  color: black;
+  font-family: 'Garamond';
+  font-size: 4rem;
+  text-align: center;
+}
+
+.infline {
+  border: none; /* Remove the default border */
+  border-top: 3px solid #FF6E4E; /* Add a new border on the top */
+  width: 20%; /* Adjust width as needed */
+  margin: 20px auto; /* Center the line horizontally and add some space */
+  color: #FF6E4E; /* Ensure the color is explicitly set */
+  background-color: #FF6E4E; /* Ensure the background color is explicitly set */
+}
+
+.inftxt2 {
+  color: black;
+  font-family: 'Heebo';
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 3rem;
+}
+
+.container {
+  display: flex;
+  color: black;
+}
+
+.column {
+  flex: 1;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+  width: 100%; 
+  overflow: hidden;
+  margin-left: 20px;
+  border-top-left-radius: 40%; 
+  border-top-right-radius: 40%;
+}
+
+.inftxt31 {
+  font-family: 'Heebo';
+  font-weight: bolder;
+  font-size: medium;
+  padding-left: 2.6rem;
+  padding-top: 7rem;
+  line-height: 2;
+  color: #FF6E4E;
+}
+
+.inftxt32 {
+  color: black;
+  font-family: 'Heebo';
+  font-weight: bold;
+  font-size: medium;
+  line-height: 2;
+  padding-left: 3rem;
+}
+
+.inftxt3 {
+  color: black;
+  font-family: 'Heebo';
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 0.9rem;
+  padding-top: 10rem;
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .column img {
+      width: 80%; 
+      height: 80%;
+      border-top-left-radius: 10%; 
+      border-top-right-radius: 10%;
+      border-bottom-left-radius: 10%; 
+      border-bottom-right-radius: 10%;
+  }
+
+  .column {
+      width: 100%;
+      margin: 0;
+  }
+
+  .columntextport {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .inftxt31 {
+      font-size: small;
+      padding: 0 1rem; 
+  }
+
+  .inftxt32,
+  .inftxt3 {
+      font-size: small;
+      padding: 0 1rem; 
+  }
+}

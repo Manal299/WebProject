@@ -1,0 +1,388 @@
+@font-face {
+    font-family: 'Emotion';
+    src: url('/Users/Projectwebka/WebProject/Frontend/src/font/against regular.woff') format('woff');
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/Users/Projectwebka/WebProject/Frontend/src/PlayfairDisplay-Regular.woff') format('woff'); /* Update the path to your font file */
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  
+  .main {
+    padding: 20px;
+    background-color: rgb(250, 246, 243);
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    border-radius: 8px;
+    position: relative; /* Add position relative for absolute positioning */
+  }
+  
+  .number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #da7789;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+  }
+  
+  .description {
+    margin-top: 10px;
+    color: rgb(48, 47, 47);
+  }
+  
+  .grid-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px; 
+    width: 2px;
+    height: 100%;
+    background-color: #da7789; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  
+    .grid-item {
+      padding-left: 12px; 
+    }
+  
+    .grid-item::before {
+      left: 0;
+    }
+  }
+  
+  .containercontent {
+    margin-top:4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+  
+  .image-wrapper {
+    display: flex;
+    align-items: flex-end;
+    width: 50%; 
+  }
+  
+  .image-crop {
+    width: 50%; 
+    overflow: hidden;
+    margin-left: 20px;
+    border-top-left-radius: 50%; 
+    border-top-right-radius: 50%; 
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+  }
+  
+  .image-crop img {
+    margin-right: 1rem;
+    width: 100%; 
+    height: auto; 
+    display: block;
+  }
+  
+  .textabtflo {
+    margin-top:10rem;
+    width: 50%; /* Take half of the container width */
+    color: black;
+    padding-left: 20px; /* Add padding to the text */
+  }
+  
+  .abtflo p {
+    color: #da7789;
+    font-size: 1.3rem;
+  }
+  
+  .blossom p {
+    color: black;
+    font-size: 2.5rem;
+  }
+  
+  .blossomdesc p {
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .containercontent {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .image-wrapper, .textabtflo {
+      width: 100%; /* Take full width on smaller screens */
+    }
+  
+    .image-crop {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%; /* Adjust width for images on smaller screens */
+    }
+  }
+  
+  .best-seller{
+    background-color: rgb(250, 246, 243);
+    padding:2rem;
+  }
+  .bsttext{
+    color:#FF6E4E;
+    font-size:medium;
+    text-align: center;
+  }
+  
+  .bstmaintexy{
+    color:black;
+    font-size:3.5rem;
+    text-align: center;
+    font-family: Emotion;
+  }
+  .exp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin-top: 3rem; /* Adjust margin as needed */
+  }
+  
+  .videopl {
+    flex: 1; /* Let the video take up available space */
+    max-width: 50%; /* Limit the maximum width of the video */
+    padding:3rem;
+  }
+  
+  .videopl video {
+    width: 100%; /* Ensure the video takes up full width of its container */
+    height: auto; /* Allow the video to adjust its height according to aspect ratio */
+    max-width: 100%; /* Ensure video doesn't exceed its container width */
+    height: auto; /* Allow the video to adjust its height according to aspect ratio */
+    max-height: 400px; /* Set the maximum height of the video */
+  }
+  
+  .text {
+    flex: 1; /* Let the text take up available space */
+    padding: 20px; /* Add padding to the text */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    color: black;
+    
+  }
+  .vdhead{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+  .vdt1{
+  font-family: sans-serif;
+  font-size: medium;
+  color:#FF6E4E;
+  }
+  
+  /* For responsiveness */
+  @media (max-width: 768px) {
+    .exp {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    
+    .videopl,
+    .text {
+      max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+  
+    .videopl video {
+      max-height: 300px; /* Reduce the maximum height of the video for smaller screens */
+    }
+  }
+  
+  .exp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin-top: 3rem; /* Adjust margin as needed */
+  }
+  
+  .videopl {
+    flex: 1; /* Let the video take up available space */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+  }
+  
+  .videopl video {
+    width: 100%; /* Ensure the video takes up full width of its container */
+    height: auto; /* Allow the video to adjust its height according to aspect ratio */
+    max-width: 100%; /* Ensure video doesn't exceed its container width */
+    max-height: 400px; /* Set the maximum height of the video */
+  }
+  
+  .text {
+    flex: 1; /* Let the text take up available space */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    color: black;
+  }
+  
+  .vdhead {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+  
+  .vdt1 {
+    font-family: sans-serif;
+    font-size: medium;
+    color: #FF6E4E;
+  }
+  
+  /* For responsiveness */
+  @media (max-width: 768px) {
+    .exp {
+      flex-direction: row; /* Stack items vertically on smaller screens */
+    }
+  
+    .videopl,
+    .text {
+      max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+  
+    .videopl video {
+      max-height: 200px; /* Reduce the maximum height of the video for smaller screens */
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .exp {
+      flex-direction: row; /* Stack items vertically on smaller screens */
+    }
+  
+    .videopl,
+    .text {
+      max-width: 100%; /* Adjust the maximum width for smaller screens */
+      text-align: center;
+    }
+  
+    .videopl video {
+      max-height: 200px; /* Reduce the maximum height of the video for smaller screens */
+    }
+  }
+  @media (max-width: 768px) {
+    .exp {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .videopl,
+    .text {
+      max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+  
+    .videopl video {
+      max-height: 200px; /* Reduce the maximum height of the video for smaller screens */
+    }
+  }
+  .ordercontent{
+    background-color: #1f0406;
+    margin-top:4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+  }
+  
+  .ordimage-wrapper {
+    display: flex;
+    width: 100%; 
+    padding-top:4rem;
+    padding-left: 4rem;
+  }
+  
+  .ordimage-crop {
+    width: 100%; 
+    overflow: hidden;
+    margin-left: 20px;
+    border-top-left-radius: 50%; 
+    border-top-right-radius: 50%; 
+  }
+  
+  .ordimage-crop img {
+    margin-right: 1rem;
+    width: 100%; 
+    height: auto; 
+    display: block;
+  }
+  .ordernow p {
+    color: wite;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 1rem;
+  }
+  
+  .ordtext{
+    color:aliceblue;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    padding-left: 1rem;
+  }
+  .calltoaction{
+    color:#FF6E4E;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  @media (max-width: 768px) {
+    .ordimage-wrapper {
+      width: 80%; 
+      padding: 1rem; 
+      text-align: center; 
+    }
+  
+    .ordimage-crop img {
+      margin-right: 0; 
+      margin-bottom: 1rem; 
+    }
+    .calltoaction p {
+      font-size: 0.6rem;
+    }
+    .ordernow p {
+      font-size: 0.8rem; 
+    }
+  }
+  @media (max-width: 1024px) {
+    .ordimage-wrapper {
+      width: 80%; 
+      padding: 1rem; 
+      text-align: center; 
+    }
+  
+    .ordimage-crop img {
+      margin-right: 0; 
+      margin-bottom: 1rem; 
+    }
+    .calltoaction p {
+      font-size: 1rem;
+    }
+    .ordernow p {
+      font-size: 1.5rem; 
+    }
+  }

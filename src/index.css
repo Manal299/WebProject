@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('./fonts/CormorantGaramond-Bold.woff') format('woff');
+    /* Add more src declarations for different file formats if needed */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('./fonts/Heebo-Light.woff') format('woff');
+    /* Add more src declarations for different file formats if needed */
+    font-weight: normal;
+    font-style: normal;
+}
