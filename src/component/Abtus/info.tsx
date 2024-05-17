@@ -15,14 +15,12 @@ const Info: React.FC = () => {
       <div class="column">
       <img src={a} alt="Image"/>
     </div>
-    <div class="columntextport">
     <div class="column">
       <p className="inftxt31">At Bloomila,</p>
       <p className="inftxt32"> we believe in sourcing our flowers with care and conscience, ensuring each bloom tells a tale of sustainability and freshness. We partner with local growers who share our passion for quality and eco-conscious practices, hand-selecting each stem to ensure only the finest finds their way to our shop. From sun-kissed fields to verdant gardens, we seek out blooms bursting with natural beauty and fragrance.</p>
     </div>
     <div class="column">
       <p className="inftxt3">Additionally, we support fair trade initiatives, sourcing flowers from ethical suppliers around the globe, guaranteeing fair wages and safe working conditions for all. Our commitment to sustainability extends to our packaging too, as we opt for eco-friendly materials whenever possible, ensuring our flowers arrive at your doorstep in the most planet-friendly way possible.</p>
-    </div>
     </div>
   </div>
     </>

@@ -4,6 +4,7 @@ import Homepage from '../component/Homepage/homepage';
 import Content from '../component/Content/content';
 import Footer from '../component/Footer/footer';
 import Slideshow from '../component/Slideshow/slideshow';
+import GoogleMap from '../component/GoogleMaps/google';
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
    <Homepage/>
    <Slideshow/>
    <Content/>
+   <GoogleMap/>
    <Footer/>
    </>
   )

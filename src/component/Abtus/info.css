@@ -106,9 +106,6 @@
   .column {
       width: 100%;
       margin: 0;
-  }
-
-  .columntextport {
       display: flex;
       flex-direction: column;
   }
