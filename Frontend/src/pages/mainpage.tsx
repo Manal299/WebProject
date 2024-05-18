@@ -5,6 +5,7 @@ import Content from '../component/Content/content';
 import Footer from '../component/Footer/footer';
 import Slideshow from '../component/Slideshow/slideshow';
 import GoogleMap from '../component/GoogleMaps/google';
+import Chatbox from '../component/Chatbox/chatbox';
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
    <Header/>
    <Homepage/>
    <Slideshow/>
+   <Chatbox/>
    <Content/>
    <GoogleMap/>
    <Footer/>

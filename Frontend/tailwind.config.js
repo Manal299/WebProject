@@ -3,10 +3,12 @@ export default {
   content: ["./index.html", "./src/*/.{js,ts,jsx,tsx}"],
 
   theme: {
-    extend: {fontFamily: {
-      'garamond': ['Cormorant Garamond', 'serif'],
-      'heebo': ['Heebo', 'sans-serif'],
-    },},
+    extend: {
+      fontFamily: {
+        cormorant: ['Cormorant Garamond', 'serif'],
+        heebo: ['Heebo', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

@@ -1,0 +1,108 @@
+
+.recognition-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial, sans-serif';
+    color: #333;
+  }
+  
+  .recogh1 {
+    color: black;
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 5rem;
+    padding: 2rem;
+}
+
+  
+.recogform {
+    margin-bottom: 20px;
+  }
+  
+  .file-input {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    border: 2px solid rgb(152, 77, 37);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .btn {
+    background-color: rgb(152, 77, 37);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .btn:hover {
+    background-color:rgb(248, 158, 109);
+  }
+  
+  .image-preview {
+    margin: 20px 0;
+  }
+  
+  .image-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid rgb(152, 77, 37);
+    border-radius: 5px;
+  }
+  
+  .recogresult {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .recogresult h2 {
+    color:#da7789;
+  }
+  
+  .recogresult p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  @media (max-width: 768px) {
+    .recognition-container{
+      padding: 10px;
+    }
+  
+    .btn {
+      padding: 10px;
+    }
+  
+    .recogresult p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .recognition-container {
+      padding: 5px;
+    }
+  
+    .recogh1 {
+      font-size: 24px;
+    }
+  
+    .btn {
+      padding: 8px;
+    }
+  
+    .recogresult p {
+      font-size: 14px;
+    }
+  }
+  

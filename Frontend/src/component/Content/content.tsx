@@ -51,7 +51,7 @@ const Main: React.FC = () => {
           <div className="blossomdesc">
             <p>Welcome to Florist, where floral artistry meets passion for nature's beauty. Our story is rooted in a deep love for flowers and a commitment to creating unforgettable moments for our customers.</p>
           </div>
-          <button type="button" className="btn btn-secondary btn-lg">Read More</button>
+          <button type="button" className="btn btn-secondary btn-lg" style={{ backgroundColor: 'grey', color: 'white' }}>Read More</button>
         </div>
       </div>
       <div className="best-seller">

@@ -27,9 +27,9 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <div className="navbar-link">
-          Contact
+          Extra Help
           <div className="dropdown-content">
-            <a href="/option6">Option 6</a>
+            <a href="/flowerrecognition">Flower Recognition</a>
             <a href="/option7">Option 7</a>
             <a href="/option8">Option 8</a>
             <a href="/option9">Option 9</a>

@@ -4,7 +4,7 @@ import './testimonial.css';
 const testimonial : React.FC = () => {
 return(
     <>
-  <div className="container">
+  <div className="testimonial-container">
   <div className="row">
     <div className="col-sm-12">
       <div id="myCarousel" className="carousel slide" data-ride="carousel">

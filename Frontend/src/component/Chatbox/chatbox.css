@@ -1,0 +1,123 @@
+/* General Styles */
+
+.logo {
+    height: 3em;
+    padding: 0.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #000000aa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
+  .slider-open {
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: move;
+    user-select: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .slider-open:hover {
+    background-color: darkgrey;
+  }
+  
+  /* Chatbox Styles */
+  .slider-visible {
+    background-color: white;
+    width: 400px; /* Enlarged the width */
+    height: 500px; /* Enlarged the height */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: move;
+    position: absolute;
+    top: -510px; /* Adjusted based on chatbox height */
+    left: -400px; /* Adjusted based on chatbox width */
+    z-index: 1000;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .slider-visible {
+      width: 90vw;
+      height: 80vh;
+      left: auto;
+      right: 10px;
+      top: auto;
+      bottom: calc(100% + 20px);
+    }
+    .slider-open {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      padding: 0;
+    }
+  }
+  
+  .container-Slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
+    max-height: 400px; /* Enlarged the response box */
+    /*overflow-y: auto;*/
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  /* Color block for input and response */
+  .container-text, .input-box {
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Soften input box boundaries */
+  input[type="text"] {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+  }
+  

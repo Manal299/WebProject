@@ -24,7 +24,7 @@ const BlogsMain: React.FC<BlogsMainProps> = ({ blogs }) => {
         <div className="blogs-container">
           {blogs.map(blog => (
             <div key={blog.id} className="blog-card">
-              <img src={blog.image} alt={blog.title} />
+              <img src={blog.image3} alt={blog.title} />
               <Link to={`/blog/blog${blog.id}`}>{blog.title}</Link>
             </div>
           ))}
