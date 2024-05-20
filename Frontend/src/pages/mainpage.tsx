@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../component/Header/header'; 
 import Homepage from '../component/Homepage/homepage';
 import Content from '../component/Content/content';
 import Footer from '../component/Footer/footer';
 import Slideshow from '../component/Slideshow/slideshow';
 import axios from 'axios';
+import Header from '../Components/Header';
 
 const MainPage = () => {
   interface user {
@@ -37,9 +37,8 @@ const MainPage = () => {
     // </div>
    <>
    <Header/>
-   <Homepage/>
-   <Slideshow/>
-   <Content/>
+   {/* <Slideshow/>
+   <Content/> */}
    <Footer/>
    </>
   )

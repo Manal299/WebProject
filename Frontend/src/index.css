@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Cormorant Garamond';
-    src: url('./fonts/CormorantGaramond-Bold.woff') format('woff');
+    src: url('../fonts/CormorantGaramond-Bold.woff') format('woff');
     /* Add more src declarations for different file formats if needed */
     font-weight: bold;
     font-style: normal;
@@ -12,8 +12,30 @@
 
 @font-face {
     font-family: 'Heebo';
-    src: url('./fonts/Heebo-Light.woff') format('woff');
+    src: url('../fonts/Heebo-Light.woff') format('woff');
     /* Add more src declarations for different file formats if needed */
     font-weight: normal;
     font-style: normal;
 }
+/* src/index.css or any appropriate CSS file */
+@font-face {
+    font-family: 'Emotion';
+    src: url('../fonts/against regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Add the following Tailwind utility classes in your global styles or directly in the JSX if preferred */
+  
+  .font-emotion {
+    font-family: 'Emotion', sans-serif;
+  }
+  
+  .text-brown-700 {
+    color: rgb(152, 77, 37);
+  }
+  
+  .mt-2vh {
+    margin-top: 2vh;
+  }
+  
