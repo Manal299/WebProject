@@ -1,5 +1,5 @@
 import React from 'react'
-import b from '../images/blogbg.jpg'
+import b from '../images/blogbg.png'
 import './bloghead.css';
 
 const bloghead = () => {

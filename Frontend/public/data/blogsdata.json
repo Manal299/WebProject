@@ -11,7 +11,8 @@
     "publishing_date": "12-7-2022",
     "about": "Aaron Warner is a prolific writer known for his captivating articles on exotic flowers, coupled with stunning photo essays capturing their beauty in unique photoshoots",
     "keywords": "Photoshoots,Artistry,Flowers,Exotic Flower,Creativity",
-    "comments": "Katie Wang,3-95-2023,The blog is very insightful.|Conner Cobalt,22-09-2023,Great job! Aaron."
+    "comments": "Katie Wang,3-95-2023,The blog is very insightful.|Conner Cobalt,22-09-2023,Great job! Aaron.",
+    "color": "#0d2914"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
   "publishing_date": "09-28-2024",
   "about": "Emily Rodriguez is a passionate botanist and writer, renowned for her insightful articles and research on the beauty and symbolism of flowers.",
   "keywords": "Flowers,Nature,Symbolism,Botany,Beauty",
-  "comments": "Nathan Hayes,10-05-2024,This is such a beautiful exploration of flowers!|Isabella Chen,10-10-2024,Emily's writing always inspires me to appreciate the beauty of nature."
+  "comments": "Nathan Hayes,10-05-2024,This is such a beautiful exploration of flowers!|Isabella Chen,10-10-2024,Emily's writing always inspires me to appreciate the beauty of nature.",
+  "color": "#8a244d"
 
   },
   {
@@ -40,7 +42,8 @@
   "publishing_date": "03-12-2024",
   "about": "Sophia Martinez is a holistic health practitioner with a passion for herbal medicine and natural remedies.",
   "keywords": "Flowers,Healing,Therapeutic,Natural Remedies,Wellness",
-  "comments": "David Lee,03-18-2024,This is such an insightful look into the therapeutic potential of flowers!|Emma Thompson,03-22-2024,Flowers truly are nature's medicine."
+  "comments": "David Lee,03-18-2024,This is such an insightful look into the therapeutic potential of flowers!|Emma Thompson,03-22-2024,Flowers truly are nature's medicine.",
+  "color": "#b08b35"
 
   },
   {
@@ -55,7 +58,8 @@
     "publishing_date": "08-10-2024",
     "about": "Olivia Green is a master gardener with a passion for sustainable landscaping and floral design.",
     "keywords": "Gardening,Flower Garden,Plants,Cultivation,Landscaping",
-    "comments": "Benjamin Clark,08-15-2024,These gardening tips are invaluable for anyone looking to create a beautiful flower garden!|Sophie Davis,08-20-2024,I can't wait to apply these tips to my own garden!"
+    "comments": "Benjamin Clark,08-15-2024,These gardening tips are invaluable for anyone looking to create a beautiful flower garden!|Sophie Davis,08-20-2024,I can't wait to apply these tips to my own garden!",
+    "color": "#59151b"
   
   },
   {
@@ -70,7 +74,8 @@
   "publishing_date": "10-05-2024",
   "about": "Ava Roberts is a fashion enthusiast with a keen eye for trends and design.",
   "keywords": "Fashion,Floral,Fashion Design,Trends,Style",
-  "comments": "Ella Wilson,10-10-2024,Floral fashion is always in style! This blog captures its essence beautifully.|Liam Johnson,10-15-2024,It's amazing how flowers inspire creativity in the world of fashion."
+  "comments": "Ella Wilson,10-10-2024,Floral fashion is always in style! This blog captures its essence beautifully.|Liam Johnson,10-15-2024,It's amazing how flowers inspire creativity in the world of fashion.",
+  "color": "#111940"
   },
   {
     "id": 6,
@@ -84,7 +89,8 @@
   "publishing_date": "11-18-2024",
   "about": "Nathan Thompson is a botanist and educator with a passion for sharing knowledge about plant biology.",
   "keywords": "Flowers,Science,Botany,Anatomy,Reproduction",
-  "comments": "Emma Garcia,11-22-2024,This blog provides a fascinating insight into the intricate world of floral biology!"
+  "comments": "Emma Garcia,11-22-2024,This blog provides a fascinating insight into the intricate world of floral biology!",
+  "color": "#0c3d1d"
 
   }
 ]

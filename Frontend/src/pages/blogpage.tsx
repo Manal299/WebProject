@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../component/Header/header';
 import Footer from '../component/Footer/footer';
@@ -17,17 +17,25 @@ interface BlogsMainProps {
 }
 
 const BlogsMain: React.FC<BlogsMainProps> = ({ blogs }) => {
-
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>(blogs);
+
+  useEffect(() => {
+    setFilteredBlogs(
+      blogs.filter(blog =>
+        (blog.title && blog.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (blog.content && blog.content.toLowerCase().includes(searchQuery.toLowerCase()))
+      )
+    );
+  }, [searchQuery, blogs]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
 
-  const filteredBlogs = blogs.filter(blog =>
-    blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    blog.content.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  if (!Array.isArray(blogs) || blogs.length === 0) {
+    return <div>No blogs available</div>;
+  }
 
   return (
     <>
@@ -51,8 +59,8 @@ const BlogsMain: React.FC<BlogsMainProps> = ({ blogs }) => {
             </div>
           ))
         ) : (
-          <div>
-          <p className="noblogsavailable">No blogs found matching your search criteria.</p>
+          <div className="noblogs-container">
+            <p className="noblogsavailable">No blogs found matching your search criteria.</p>
           </div>
         )}
       </div>

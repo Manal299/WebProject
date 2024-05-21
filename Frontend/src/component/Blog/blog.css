@@ -4,6 +4,7 @@ color:black;
 font-family: 'Garamond';
 text-align: center;
 font-size: 4rem;
+padding-top:4rem;
 }
 .blogline{
   border: none; 
@@ -20,7 +21,9 @@ font-size: 4rem;
   box-sizing: border-box;
   color: black;
 }
-
+.authorname{
+  font-weight: bolder;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
