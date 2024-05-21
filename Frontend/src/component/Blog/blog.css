@@ -1,4 +1,18 @@
-/* General Styles */
+
+.singlebloghead{
+color:black;
+font-family: 'Garamond';
+text-align: center;
+font-size: 4rem;
+}
+.blogline{
+  border: none; 
+  border-top: 3px solid #FF6E4E; 
+  width: 20%; 
+  margin: 20px auto; 
+  color: #FF6E4E; 
+  background-color: #FF6E4E; 
+}
 .blog-container {
   display: flex;
   flex-direction: column;

@@ -4,7 +4,7 @@ import Homepage from '../component/Homepage/homepage';
 import Content from '../component/Content/content';
 import Footer from '../component/Footer/footer';
 import Slideshow from '../component/Slideshow/slideshow';
-import GoogleMap from '../component/GoogleMaps/google';
+import Map from '../component/GoogleMaps/google.tsx';
 import Chatbox from '../component/Chatbox/chatbox';
 
 const MainPage = () => {
@@ -15,7 +15,7 @@ const MainPage = () => {
    <Slideshow/>
    <Chatbox/>
    <Content/>
-   <GoogleMap/>
+   <Map/>
    <Footer/>
    </>
   )

@@ -1,3 +1,13 @@
+.loadingscreen{
+	color:black;
+	font-size: 4rem;
+}
+.testimonialheading{
+  color: black;
+  font-family: 'Garamond';
+  font-size: 4rem;
+  text-align: center;
+}
 .testimonial-container{
 	padding: 4rem;
 	color:#000;

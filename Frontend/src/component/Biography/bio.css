@@ -1,0 +1,78 @@
+.Bioo{
+  color:black;
+}
+.biohead{
+  color: black;
+  font-family: 'Garamond';
+  font-size: 4rem;
+  text-align: center;
+  padding-top:4rem;
+}
+
+.bioline {
+    border: none; 
+    border-top: 3px solid #FF6E4E; 
+    width: 20%; 
+    margin: 20px auto; 
+    color: #FF6E4E; 
+    background-color: #FF6E4E; 
+  }
+  .biotext1{
+    font-family: 'Heebo';
+    font-size: medium;
+    padding:2rem;
+    text-align: center;
+  }
+.florists{
+  display:flex;
+}
+  .jiaflorist{
+    width:30%;
+    padding-left: 2rem;
+    border-top-right-radius: 50%;
+  }
+  .floriststext{
+    font-family: 'Heebo';
+    align-content: center;
+    font-size:medium;
+    padding-left:2rem;
+    padding-right:3rem;
+  }
+  .textstart{
+    color:#FF6E4E;
+    font-weight: bold;
+  }
+  .manalflorist{
+    width:25%;
+    padding-right: 2rem;
+    border-top-left-radius: 50%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .biohead{   
+      font-size: 2rem;
+    }
+    .biotext1{
+      font-size: small;
+    }
+    .jiaflorist{
+      width:25%;
+      padding-left: 1rem;
+      border-top-right-radius: 50%;
+    }
+    .floriststext{  
+      font-size:1rem;
+      padding-left:1rem;
+      padding-right:2rem;
+    }
+    .textstart{
+      color:#FF6E4E;
+      font-weight: bold;
+    }
+    .manalflorist{
+      width:20%;
+      padding-right: 1rem;
+      border-top-left-radius: 50%;
+    }
+  
+  }

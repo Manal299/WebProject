@@ -1,0 +1,17 @@
+.counter-section{
+    background-color: rgb(250, 246, 243);
+    color:black;
+    padding:3rem;
+}
+.counter-icon{
+    font-size:35px;
+}
+.counter-title{
+    font-weight:600;
+    color:#FF6E4E;
+    font-size: medium;
+}
+.counter{
+    font-family: 'Heebo';
+    font-weight: lighter;
+}

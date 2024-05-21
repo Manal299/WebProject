@@ -30,11 +30,27 @@
     font-weight: bold;
     margin: 10px 0;
   }
-  
+  .no-blogs {
+    text-align: center;
+    margin-top: 20px;
+  }
   .blog-card p {
     padding: 0 10px 10px 10px;
     color: #555;
     text-align: center;
+  }
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 50%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
   @media (max-width: 768px) {
@@ -47,5 +63,23 @@
     .blog-card {
       width: 100%;
     }
+  }
+  
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 50%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .noblogsavailable{
+    color:black;
   }
   

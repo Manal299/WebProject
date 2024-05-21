@@ -1,0 +1,39 @@
+[
+    {
+      "name": "Jawaria",
+      "customer": "Jawaria Asim",
+      "image": "/TestimonialImages/Jawaria.jpeg",
+      "testimonial": "I was amazed by the beautiful bouquet I received from the flower shop. The flowers were fresh and vibrant, and they brought so much joy to my home. Thank you!"
+    },
+    {
+      "name": "Manal",
+      "customer": "Manal Abdul Razzaq",
+      "image": "/TestimonialImages/manal.jpeg",
+      "testimonial": "The flower shop exceeded my expectations with their excellent service and stunning floral arrangements. I ordered flowers for a special occasion, and they delivered right on time. I highly recommend them!"
+    },
+    {
+      "name": "Maryam",
+      "customer": "Maryam Nasir",
+      "image": "/TestimonialImages/maryam.jpeg",
+      "testimonial": "I'm so grateful for the lovely flowers I received from the flower shop. They were arranged with such care and attention to detail, and they made my day brighter. I'll definitely be coming back for more!"
+    },
+    {
+      "name": "Eeman",
+      "customer": "Eeman Abdullah",
+      "image": "/TestimonialImages/eeman.jpeg",
+      "testimonial": "The flower shop is my go-to place for all my floral needs. Their selection is amazing, and the quality of their flowers is top-notch. I've never been disappointed with my purchases here."
+    },
+    {
+      "name": "Hafsa",
+      "customer": "Hafsa Sandhu",
+      "image": "/TestimonialImages/hafsa.jpeg",
+      "testimonial": "I can't thank the flower shop enough for the stunning bouquet they created for my friend's birthday. It was absolutely perfect, and my friend was thrilled with it. I'll definitely be a repeat customer!"
+    },
+    {
+      "name": "Sultan",
+      "customer": "Sultan Sheikh",
+      "image": "/TestimonialImages/sultan.jpeg",
+      "testimonial": "The flower shop has become my favorite place to buy flowers. Their friendly staff and beautiful arrangements always make me feel welcome. I highly recommend them to anyone looking for high-quality flowers."
+    }
+  ]
+  

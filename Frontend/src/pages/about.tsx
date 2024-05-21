@@ -5,15 +5,16 @@ import Info from '../component/Abtus/info';
 import Footer from '../component/Footer/footer';
 import Testimonial from '../component/Testimonials/testimonial';
 import Creds from '../component/Credits/creds';
-
+import Biography from '../component/Biography/bio';
 const AboutUs: React.FC = () => {
   return (
     <>
     <Header/>
     <Homepage/>
     <Info/>
-    <Testimonial/>
     <Creds/>
+    <Biography/>
+    <Testimonial/>   
     <Footer/>
     </>
   )

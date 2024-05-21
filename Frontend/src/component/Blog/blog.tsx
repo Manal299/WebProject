@@ -41,6 +41,9 @@ const BlogPage: React.FC<BlogPageProps> = ({ blogs }) => {
   });
 
   return (
+    <>
+    <h1 className="singlebloghead">{blog.title}</h1>
+    <hr className="blogline"/>
     <div className="blog-container">
       <div className="sidebar">
         <div className="author-section">
@@ -61,7 +64,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ blogs }) => {
       </div>
       <div className="blog-content">
         <img src={blog.image3} alt="Blog cover image" className="blog-cover-img" />
-        <h1>{blog.title}</h1>
+        
         <p>{blog.content1}</p>
         <div className="images">
           <img src={blog.image1} alt={blog.title} className="blog-image" />
@@ -111,6 +114,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ blogs }) => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
