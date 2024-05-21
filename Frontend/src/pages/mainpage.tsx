@@ -9,15 +9,17 @@ import Chatbox from '../component/Chatbox/chatbox';
 
 const MainPage = () => {
   return (
-   <>
-   <Header/>
-   <Homepage/>
-   <Slideshow/>
-   <Chatbox/>
-   <Content/>
-   <Map/>
-   <Footer/>
-   </>
-  )
+    <>
+      <Header/>
+      <Homepage/>
+      <Slideshow/>
+      <Chatbox/>
+      <Content/>
+      <Map/>
+      
+      <Footer/>
+    </>
+  );
 }
+
 export default MainPage;

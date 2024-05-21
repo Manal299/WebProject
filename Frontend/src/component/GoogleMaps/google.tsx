@@ -1,28 +1,35 @@
 import React from 'react';
-import ReactMapGL from 'react-map-gl';
+import './google.css';
+import { CiLocationOn } from "react-icons/ci";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const MapComponent = () => {
-  const [viewport, setViewport] = React.useState({
-    latitude: 31.5204,
-    longitude:74.3587,
-    zoom: 6,
-    width: '100%',
-    height: '100%'
-  });
-
   return (
-    <>
-    <div style={{ height: '400px', width: '100%' }}>
-      <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken={"pk.eyJ1IjoiamlhLTUiLCJhIjoiY2x3ZjVteGRyMHM5NzJqbzNiamZxbGF4biJ9.THdVwMX0S-DI_QiGxv7Mfw"}
-        mapStyle="mapbox://styles/jia-5/clwf9s68k009201qxbny22wwu"
-        width="100%"
-        height="100%"
-        onViewportChange={nextViewport => setViewport(nextViewport)}
-        />
+    <div className="map-container">
+      <div className="map-info">
+        <h2 className="maph2">Find Us:</h2>
+        <br/>
+        <p className="Mapinfo">Location</p>
+        <p><CiLocationOn /> 852-B Milaad St, Block B</p>
+        <p>Faisal Town, Lahore</p>
+        <br/>
+        <p className="Mapinfo">Contact Info:</p>
+        <p><FaPhoneAlt />+92 334 5576339</p>
+      </div>
+      <div className="map-iframe">
+        <iframe
+          width="100%"
+          height="400"
+          frameBorder="0"
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=852-B%20Milaad%20St,%20Block%20B%20Faisal%20Town,%20Lahore+(Bloomila)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        >
+          <a href="https://www.gps.ie/">gps vehicle tracker</a>
+        </iframe>
+      </div>
     </div>
-    </>
   );
 };
 

@@ -1,0 +1,34 @@
+.map-container {
+    display: flex;
+    width: 100%;
+    color:black;
+    
+  }
+  
+  .map-info {
+    width: 30%;
+    padding: 20px;
+    background-color: rgb(250, 246, 243);
+    border-right: 1px solid #ddd;
+  }
+  .maph2{
+    font-size: 3rem;
+    font-family: 'Garamond';
+    color:black;
+  }
+  .Mapinfo{
+    color:#FF6E4E;
+    font-weight: bold;
+  }
+  .map-iframe {
+    width: 70%;
+  }
+  
+  .map-info h2 {
+    margin-top: 0;
+  }
+  
+  .map-info p {
+    margin: 5px 0;
+  }
+  
