@@ -5,7 +5,10 @@ import AboutUs from './pages/about';
 import Blog from './pages/blogpage';
 import BlogPage from './component/Blog/blog';
 import FlowerRecognitionPage from './pages/flowerrecogpage';
-import Login from './component/Login/login';
+import LoginSignup from './pages/login';
+import UserProfile from './component/UserProfile/userprofile';
+import SignUp from './pages/signup';
+
 interface Blog {
   id: number;
   title: string;
@@ -43,7 +46,9 @@ function App() {
           <Route path="/blog/:blogId" element={<BlogPage blogs={blogs} />} />
           <Route path='/aboutus' element={<AboutUs/>} /> 
           <Route path='/flowerrecognition' element={<FlowerRecognitionPage/>} /> 
-          <Route path ='/login' element={<Login/>}/>
+          <Route path ='/login' element={<LoginSignup/>}/>
+          <Route path ='/profile' element={<UserProfile/>}/>
+          <Route path ='/signup' element={<SignUp/>}/>
         </Routes>
       </Router>
     </>
