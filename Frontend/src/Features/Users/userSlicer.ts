@@ -37,7 +37,14 @@ export const loginUser = createAsyncThunk<User, { email: string; password: strin
   }
 );
 
-// Async thunk for fetching the user profile using the token
+export const signupUser = createAsyncThunk<User, User>(
+  'auth/signup',
+  async (user) => {
+    const response = await axios.post('http://localhost:3000/api/signup', user);
+    return response.data.user;
+  }
+);
+
 export const fetchUserProfile = createAsyncThunk<User>('auth/profile', async () => {
   const token = localStorage.getItem('token');
   const response = await axios.get('http://localhost:3000/api/profile', {
@@ -78,6 +85,18 @@ const authSlice = createSlice({
       .addCase(fetchUserProfile.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch user profile';
+      })
+      .addCase(signupUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(signupUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload;
+        state.error = null;
+      })
+      .addCase(signupUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || 'Failed to sign up';
       });
   },
 });

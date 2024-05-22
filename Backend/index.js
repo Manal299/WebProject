@@ -4,6 +4,8 @@ const cors = require('cors');
 const userRoutes = require('./Routes/User-Routes.js');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
 
 const app = express();
 
@@ -14,6 +16,7 @@ db.once('open', () => {
     console.log('Connected to MongoDB');
 });
 
+app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());

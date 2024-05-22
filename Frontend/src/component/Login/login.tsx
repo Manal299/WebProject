@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const validateEmail = (email: string) => {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|yahoo\.com)$/;
     return emailRegex.test(email);
   };
 

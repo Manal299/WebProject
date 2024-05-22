@@ -68,6 +68,40 @@ const getUser = async (req, res) => {
   }
 };
 
+const signupUser = async (req, res) => {
+  const { firstName, lastName, contact, image, address, password, email, gender, dob } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const newUser = new User({
+      firstName,
+      lastName,
+      contact,
+      image,
+      address,
+      password,
+      email,
+      gender,
+      dob
+    });
+
+    await newUser.save();
+
+    const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET_KEY, {
+      expiresIn: '1h'
+    });
+
+    res.status(201).json({ user: newUser, token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error. Please try again later.' });
+  }
+};
 exports.loginUser = loginUser;
 exports.verifyToken = verifyToken;
 exports.getUser = getUser;
+exports.signupUser = signupUser;
