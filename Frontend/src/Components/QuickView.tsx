@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Reviews from "../Reviews";
+import Reviews from "./Reviews";
 import SizeView from "./SizeView";
-import floral from "./floralbutton.jpg";
+import floral from "../images/floralbutton.jpg";
 
 type QuickViewProps = {
   onClose: () => void;

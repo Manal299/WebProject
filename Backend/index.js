@@ -1,39 +1,21 @@
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const port = 3000;
-app.use(cors());
-
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-})
-
-
-
-
-
-
-//Database Connection
-
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/Data').then(() => {
+const cors = require('cors');
+const productRoutes = require('./Routes/Flower-Routes');
+
+const app = express();
+
+mongoose.connect('mongodb://localhost:27017/FloralShop', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
     console.log('Connected to MongoDB');
-}).catch((err) => {
-    console.log('Error: ', err);
-}) 
+});
 
-const userschema = new mongoose.Schema({
-    name: String,
-    email: String,
-}) 
-const User = mongoose.model('User', userschema);
+app.use(cors());
+app.use(express.json());
+app.use('/api', productRoutes);
 
-app.get('/', (req, res) => {
-    const data = User.find().then((data) => {
-        console.log(data);
-        res.json(data);
-    })
-
-})
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});

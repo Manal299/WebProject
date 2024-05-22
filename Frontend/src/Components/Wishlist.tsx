@@ -1,20 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../Features/Products/ProductSlice';
 
 import { RootState, AppDispatch } from '../app/store';
 import ProductCard from './ProductCard';
 
-const Products: React.FC = () => {
-  const dispatch: AppDispatch = useDispatch();
-  const { loading, products, error } = useSelector((state: RootState) => state.products);
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+const Wishlist: React.FC = () => {
+    const dispatch = useDispatch();
+    const items = useSelector((state: RootState) => state.wishlist.items);
 
   return (
     <div>
@@ -22,7 +14,7 @@ const Products: React.FC = () => {
         <h2 className="sr-only">Products</h2>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {products.map((products) => (
+          {items.map((products) => (
             <ProductCard
             key={products._id}
               imageUrl={products.imageUrl}
@@ -36,4 +28,4 @@ const Products: React.FC = () => {
     </div>
   );
 }
-export default Products;
+export default Wishlist;

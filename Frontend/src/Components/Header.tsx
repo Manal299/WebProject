@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import { IoHeart } from "react-icons/io5";
 import { BiBasket } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../app/store';
 
-class Header extends Component {
-  render() {
+function Header () {
+  const dispatch = useDispatch();
+  const items = useSelector((state: RootState) => state.cart.items);
+
+      // Calculate the total number of items in the cart
+  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
     return (
       <>
        {/* <div> 
@@ -35,7 +41,7 @@ class Header extends Component {
         <div className="relative group">
           <span className="text-lg cursor-pointer hover:text-gray-700">Shop</span>
           <div className="hidden group-hover:block absolute top-full left-0 mt-1 bg-white shadow-lg">
-            <Link to="/bestseller" className="block px-4 py-2 hover:bg-gray-100">Best Seller</Link>
+            <Link to="/products" className="block px-4 py-2 hover:bg-gray-100">Best Seller</Link>
             <Link to="/seasonal" className="block px-4 py-2 hover:bg-gray-100">Seasonal Flower</Link>
           </div>
         </div>
@@ -53,16 +59,21 @@ class Header extends Component {
         </h1>
         <div className="flex items-center space-x-6">
           <div className="relative">
+            <Link to="/cart">
             <BiBasket className="text-xl" />
-            <div className="absolute -top-2 -right-2 bg-red-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">3</div>
-          </div>
+           
+            <div className="absolute -top-2 -right-2 bg-red-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs">{totalItems}</div>
+           </Link>
+           </div>
+           <Link to="/wishlist">
           <IoHeart className="text-xl" />
+          </Link>
           <FaRegUser className="text-xl" />
         </div>
       </div> 
       </>
     );
   }
-}
+
 
 export default Header;

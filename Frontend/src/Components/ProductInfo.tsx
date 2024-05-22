@@ -1,20 +1,39 @@
-import { useState } from "react";
-import background from "./bg2.jpg";
+import { useState, useEffect } from "react";
+import background from "../images/bg2.jpg";
 import ProductCard from "./ProductCard";
 import SizeView from "./SizeView";
-import floral from "./floralbutton.jpg";
-import photo1 from "./Screenshot 2024-05-12 003117.png";
-import photo2 from "./Screenshot 2024-05-12 003126.png";
-import mainbouquet from "./tulips.jpg"
+import floral from "../images/floralbutton.jpg";
+import photo1 from "../images/Screenshot 2024-05-12 003117.png";
+import photo2 from "../images/Screenshot 2024-05-12 003126.png";
+import mainbouquet from "../images/tulips.jpg";
 import SlideOver from "./SlideOver";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../Features/Cart/CartSlice";
+import { useParams } from "react-router-dom";
+import { fetchProductById } from "../Features/Products/ProductSlice";
+import { RootState, AppDispatch } from "../app/store";
 
-function App() {
+function ProductInfo() {
   const [selectedSize, setSelectedSize] = useState("");
-  const [mainImage, setMainImage] = useState(
-    mainbouquet
-  );
-  const [slideOverVisible, setSlideOverVisible] = useState(false); // State to control slide-over visibility
+  const [mainImage, setMainImage] = useState<string | undefined>(undefined);
+  const [slideOverVisible, setSlideOverVisible] = useState(false);
+  const params = useParams<{ productId: string }>();
+  const { productId } = params;
+
+  const dispatch = useDispatch<AppDispatch>();
+  const product = useSelector((state: RootState) => state.products.product);
+
+  useEffect(() => {
+    if (productId) {
+      dispatch(fetchProductById(Number(productId)));
+    }
+  }, [dispatch, productId]);
+
+  useEffect(() => {
+    if (product) {
+      setMainImage(product.imageUrl);
+    }
+  }, [product]);
 
   const handleSizeChange = (size: string) => {
     setSelectedSize(size);
@@ -23,29 +42,32 @@ function App() {
   const handleImageClick = (imageUrl: string) => {
     setMainImage(imageUrl);
   };
+
   const handleAddToBasket = () => {
-    setSlideOverVisible(true); // Show slide-over panel
-    setTimeout(() => {
-      setSlideOverVisible(false); // Hide slide-over panel after 3 seconds
-    }, 3000);
+    if (product) {
+      const productToAdd = {
+        _id: product._id,
+        name: product.name,
+        price: product.price,
+        image: product.imageUrl,
+        quantity: 1,
+      };
+
+      dispatch(addItem(productToAdd));
+      setSlideOverVisible(true);
+    }
   };
 
   return (
     <>
       <div
-        style={{
-          backgroundImage: `url(${background})`, // Set the background image
-          backgroundSize: "cover", // Adjust the background size
-          backgroundRepeat: "no-repeat", // Set background repeat to no-repeat
-          backgroundPosition: "center", // Center the background image
-        }}
+        // style={{
+        //   backgroundImage: `url(${background})`,
+        //   backgroundSize: "cover",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundPosition: "center",
+        // }}
       >
-                {/* Render SlideOver component conditionally */}
-                {slideOverVisible && (
-          <SlideOver isOpen={true} onClose={() => setSlideOverVisible(false)} />
-        )}
-
-        
         <div className="pt-6">
           <nav aria-label="Breadcrumb">
             <ol
@@ -54,10 +76,7 @@ function App() {
             >
               <li>
                 <div className="flex items-center">
-                  <a
-                    href="#"
-                    className="mr-2 text-sm font-medium text-gray-900"
-                  >
+                  <a href="#" className="mr-2 text-sm font-medium text-gray-900">
                     NewArrivals
                   </a>
                   <svg
@@ -74,10 +93,7 @@ function App() {
               </li>
               <li>
                 <div className="flex items-center">
-                  <a
-                    href="#"
-                    className="mr-2 text-sm font-medium text-gray-900"
-                  >
+                  <a href="#" className="mr-2 text-sm font-medium text-gray-900">
                     Tulips
                   </a>
                   <svg
@@ -92,7 +108,6 @@ function App() {
                   </svg>
                 </div>
               </li>
-
               <li className="text-sm">
                 <a
                   href="#"
@@ -110,16 +125,14 @@ function App() {
                 src={mainImage}
                 className="w-4/12 mr-10"
                 alt="Main Product"
+                style={{ cursor: "pointer", objectFit: "cover", height: "550px", width: "400px" }}
+                onClick={() => handleImageClick(mainImage as string)}
               />
               <div className="ml-10">
-                <h1 className="text-3xl mb-5">Tulips</h1>
-                <h2 className="text-2xl mb-2">$55</h2>
+                <h1 className="text-3xl mb-5">{product?.name}</h1>
+                <h2 className="text-2xl mb-2">${product?.price}</h2>
                 <p className="text-1xl mb-2">
-                  Handcrafted with meticulous care, our tulip bouquet features
-                  a harmonious blend of colors and textures, carefully curated
-                  to evoke joy and admiration. Each stem is expertly selected
-                  for its freshness and beauty, ensuring that every blossom is
-                  at its peak when it reaches your doorstep.
+                  {product?.description}
                 </p>
                 <div className="w-40">
                   <SizeView
@@ -128,38 +141,25 @@ function App() {
                   />
                 </div>
                 <button
-              type="submit"
-              className="mt-6 w- text-black font-semibold py-2 px-4 focus:outline-none focus:ring-2 focus:ring-pink-900 focus:ring-offset-2"
-              style={{
-                backgroundImage: `url(${floral})`,
-                backgroundSize: "auto",
-              }}
-              onClick={handleAddToBasket} // Call handleAddToBasket when the button is clicked
-              >
+                  type="submit"
+                  className="mt-6 text-black font-semibold py-2 px-4 focus:outline-none focus:ring-2 focus:ring-pink-900 focus:ring-offset-2"
+                  style={{ backgroundImage: `url(${floral})`, backgroundSize: "auto" }}
+                  onClick={handleAddToBasket}
+                >
                   Add to Basket
                 </button>
               </div>
             </div>
             <div className="mt-4 mr-8 flex w-60">
+            <div className="mt-4 mr-8 flex w-60">
             <img
-                src={mainbouquet}
-                className="w-1/4 cursor-pointer"
-                alt="Additional Product "
-                onClick={() => handleImageClick(mainbouquet)}
-              />
-              <img
-                src={photo1}
-                className="w-1/4 cursor-pointer"
-                alt="Additional Product 1"
-                onClick={() => handleImageClick(photo1)}
-              />
+  src={mainImage} // Use the main product image as the source for all thumbnails
+  className="w-1/4 cursor-pointer"
+  onClick={() => handleImageClick(mainImage as string)} // Use the main image click handler
+  style={{ height: "100px", width: "100px", objectFit: "cover" }}
+/>
 
-              <img
-                src={photo2}
-                className="w-1/4 cursor-pointer"
-                alt="Additional Product 2"
-                onClick={() => handleImageClick(photo2)}
-              />
+</div>
             </div>
           </div>
           <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -195,8 +195,12 @@ function App() {
           </div>
         </div>
       </div>
+      <SlideOver
+        isOpen={slideOverVisible}
+        onClose={() => setSlideOverVisible(false)}
+      />
     </>
   );
 }
 
-export default App;
+export default ProductInfo;

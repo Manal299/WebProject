@@ -2,8 +2,9 @@ import React,{useState} from "react";
 import Products from "./products.tsx";
 import Filter from "./Filter.tsx";
 import Sort from "./Sort.tsx";
-import background from "./bg2.jpg";
+import background from "../images/bg2.jpg";
 import Mobilefilter from "./Mobilefilter.tsx";
+
 
 const Catalogue: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +16,12 @@ const Catalogue: React.FC = () => {
   return (
     <>
       <div
-        style={{
-          backgroundImage: `url(${background})`, // Set the background image
-          backgroundSize: "cover", // Adjust the background size
-          backgroundRepeat: "no-repeat", // Set background repeat to no-repeat
-          backgroundPosition: "center", // Center the background image
-        }}
+        // style={{
+        //   backgroundImage: `url(${background})`, // Set the background image
+        //   backgroundSize: "cover", // Adjust the background size
+        //   backgroundRepeat: "no-repeat", // Set background repeat to no-repeat
+        //   backgroundPosition: "center", // Center the background image
+        // }}
       >
        <div>
         <Mobilefilter isOpen={isOpen} toggleMenu={toggleMenu} />

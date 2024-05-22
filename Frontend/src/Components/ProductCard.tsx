@@ -1,8 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { CiHeart } from "react-icons/ci";
 import { BsBasket3 } from "react-icons/bs";
 import QuickView from "./QuickView"; // Import the QuickView component
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../Features/Wishlist/WishlistSlice";
+import { RootState } from "../app/store";
 
 type ProductCardProps = {
   imageUrl: string;
@@ -17,19 +20,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   productId,
 }) => {
-  const [isLiked, setIsLiked] = useState(false);
-  const [openProductId, setOpenProductId] = useState<number | null>(null); // State to store the ID of the currently open product
+
+  const dispatch = useDispatch(); // Initialize useDispatch hook
+  const items = useSelector((state: RootState) => state.wishlist.items);
+  const isLiked = items.some(item => item._id === productId);
 
   const toggleLike = () => {
-    setIsLiked(!isLiked);
+    const product = {
+      _id: productId,
+      name,
+      price,
+      imageUrl,
+    };
+
+    if (!isLiked) {
+      dispatch(addItem(product));
+    } else {
+      dispatch(removeItem(productId));
+    }
   };
 
-  const toggleQuickView = () => {
-    setOpenProductId(productId === openProductId ? null : productId); // Toggle the open product ID
-  };
-
-
-
+  const [openProductId, setOpenProductId] = useState<number | null>(null); // State to store the ID of the currently open product
   const [quickViewPosition, setQuickViewPosition] = useState<"left" | "right" | null>(null); // State to store the position of the quick view
 
   useEffect(() => {
@@ -55,6 +66,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
     };
   }, [productId]);
 
+  const toggleQuickView = () => {
+    setOpenProductId(productId === openProductId ? null : productId); // Toggle the open product ID
+  };
+
   return (
     <div className="group flex flex-col items-center">
       <div
@@ -73,7 +88,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="flex items-center justify-between w-full">
         <p className="text-lg font-medium text-gray-900 self-start">${price}</p>
         <div className="flex">
-          <Link to='/Tulips'>
+          <Link to={`/${productId}`}>
             <button className="mr-1">
               <BsBasket3 className="text-gray-600" />
             </button>
@@ -103,4 +118,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
     </div>
   );
 };
-export default ProductCard
+export default ProductCard;
