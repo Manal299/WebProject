@@ -16,7 +16,6 @@ const MainPage = () => {
       <Chatbox/>
       <Content/>
       <Map/>
-      
       <Footer/>
     </>
   );

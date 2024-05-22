@@ -5,7 +5,7 @@ import AboutUs from './pages/about';
 import Blog from './pages/blogpage';
 import BlogPage from './component/Blog/blog';
 import FlowerRecognitionPage from './pages/flowerrecogpage';
-
+import Login from './component/Login/login';
 interface Blog {
   id: number;
   title: string;
@@ -43,6 +43,7 @@ function App() {
           <Route path="/blog/:blogId" element={<BlogPage blogs={blogs} />} />
           <Route path='/aboutus' element={<AboutUs/>} /> 
           <Route path='/flowerrecognition' element={<FlowerRecognitionPage/>} /> 
+          <Route path ='/login' element={<Login/>}/>
         </Routes>
       </Router>
     </>

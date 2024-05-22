@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
           Extra Help
           <div className="dropdown-content">
             <a href="/flowerrecognition">Flower Recognition</a>
-            <a href="/option7">Option 7</a>
+            <a href="/login">Login</a>
             <a href="/option8">Option 8</a>
             <a href="/option9">Option 9</a>
           </div>
