@@ -40,6 +40,7 @@ export const loginUser = createAsyncThunk<User, { email: string; password: strin
 export const signupUser = createAsyncThunk<User, User>(
   'auth/signup',
   async (user) => {
+    console.log("In reducer", user.get('image'));
     const response = await axios.post('http://localhost:3000/api/signup', user);
     return response.data.user;
   }

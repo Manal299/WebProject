@@ -76,8 +76,13 @@ const UserProfile = () => {
                 <p className="userinfotext">
                   {formatDate(user.dob)}
                 </p>
-              </div></div>
-            <img src={user.image} alt="User" className="profile-image" />
+              </div>
+            </div>
+            <img 
+              src={`http://localhost:3000/images/1716444248905-chaenwoo.jpeg`} 
+              alt="User" 
+              className="profile-image" 
+            />
           </div>
         )}
       </div>

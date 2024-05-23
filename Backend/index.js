@@ -5,6 +5,7 @@ const userRoutes = require('./Routes/User-Routes.js');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+app.use('/images', express.static(path.join(__dirname, 'Backend/dbuserimages')));
 app.use('/api', userRoutes);
 
 

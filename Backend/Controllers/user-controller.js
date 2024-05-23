@@ -1,5 +1,18 @@
 const jwt = require('jsonwebtoken');
 const User = require('../Models/user-model');
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../dbuserimages/'));
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+
+const upload = multer({ storage });
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -69,7 +82,10 @@ const getUser = async (req, res) => {
 };
 
 const signupUser = async (req, res) => {
-  const { firstName, lastName, contact, image, address, password, email, gender, dob } = req.body;
+  const { firstName, lastName, contact, address, password, email, gender, dob } = req.body;
+  const image = req.file ? req.file.path : null;
+
+  console.log("Received signup data:", firstName, lastName, contact, image, address, password, email, gender, dob);
 
   try {
     const existingUser = await User.findOne({ email });
@@ -101,7 +117,9 @@ const signupUser = async (req, res) => {
     res.status(500).json({ message: 'Server error. Please try again later.' });
   }
 };
+
 exports.loginUser = loginUser;
 exports.verifyToken = verifyToken;
 exports.getUser = getUser;
 exports.signupUser = signupUser;
+exports.upload = upload;
