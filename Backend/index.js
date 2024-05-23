@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/UserInfo', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -23,7 +22,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/images', express.static(path.join(__dirname, 'Backend/dbuserimages')));
 app.use('/api', userRoutes);
-
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');

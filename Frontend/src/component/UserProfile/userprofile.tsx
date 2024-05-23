@@ -10,6 +10,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaFemale } from "react-icons/fa";
 import { FaMale } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
+import brather from '../../../public/TestimonialImages/eeman.jpeg';
 
 const UserProfile = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -78,8 +79,10 @@ const UserProfile = () => {
                 </p>
               </div>
             </div>
+            {console.log("chagbin irahad",user)}
+            {console.log("chagbin irahad",user['image'])}
             <img 
-              src={`http://localhost:3000/images/1716444248905-chaenwoo.jpeg`} 
+              src={`../../../public/TestimonialImages/${user.image}`}
               alt="User" 
               className="profile-image" 
             />

@@ -5,10 +5,11 @@ const path = require('path');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../dbuserimages/'));
+    // Update the path to the frontend public directory
+    cb(null, path.join(__dirname, '../../Frontend/public/TestimonialImages'));
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
+    cb(null, `${file.originalname}`);
   }
 });
 
@@ -83,7 +84,8 @@ const getUser = async (req, res) => {
 
 const signupUser = async (req, res) => {
   const { firstName, lastName, contact, address, password, email, gender, dob } = req.body;
-  const image = req.file ? req.file.path : null;
+  const image = req.file ? `${req.file.filename}` : null; 
+  console.log("hallooo",image)
 
   console.log("Received signup data:", firstName, lastName, contact, image, address, password, email, gender, dob);
 
